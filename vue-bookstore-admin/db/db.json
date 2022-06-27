@@ -1,19 +1,40 @@
 {
-    "posts": [
+    "books": [
         {
             "id": 1,
-            "title": "json-server",
-            "author": "typicode"
+            "title": "The Lord of the Rings",
+            "authorId": 1,
+            "date": 1954
+        },
+        {
+            "id": 2,
+            "title": "Harry Potter",
+            "author": "J.K Rowling",
+            "date": 2001
+        },
+        {
+            "id": 3,
+            "title": "1984",
+            "authorId": 3,
+            "date": 1949
         }
     ],
-    "comments": [
+    "authors": [
         {
             "id": 1,
-            "body": "some comment",
-            "postId": 1
+            "name": "J.R.R Tolkien"
+        },
+        {
+            "id": 2,
+            "name": "George Orwell"
+        },
+        {
+            "id": 3,
+            "name": "J.K Rowling"
         }
     ],
-    "profile": {
-        "name": "typicode"
+    "user": {
+        "name": "Brenon Gaymer",
+        "id": 1
     }
 }
