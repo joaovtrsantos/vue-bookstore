@@ -3,19 +3,31 @@
         {
             "id": 1,
             "title": "The Lord of the Rings",
-            "authorId": 1,
+            "isbn": "9788845292613",
+            "category_id": 4,
+            "publisher_id": 1,
+            "quantity": 7,
+            "price": 59.99,
             "date": 1954
         },
         {
             "id": 2,
             "title": "Harry Potter",
-            "authorId": 3,
+            "isbn": "9780590353403",
+            "category_id": 4,
+            "publisher_id": 2,
+            "quantity": 10,
+            "price": 45.99,
             "date": 2001
         },
         {
             "id": 3,
             "title": "1984",
-            "authorId": 3,
+            "isbn": "9780436350221",
+            "category_id": 5,
+            "publisher_id": 3,
+            "quantity": 3,
+            "price": 19.99,
             "date": 1949
         }
     ],
@@ -33,8 +45,64 @@
             "name": "J.K Rowling"
         }
     ],
+    "publishers": [
+        {
+            "id": 1,
+            "name": "Martins Fontes",
+            "site": "https://www.martinsfontespaulista.com.br"
+        },
+        {
+            "id": 2,
+            "name": "Rocco",
+            "site": "https://www.rocco.com.br"
+        },
+        {
+            "id": 3,
+            "name": "Principis",
+            "site": "https://www.cirandacultural.com.br"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "description": "Action"
+        },
+        {
+            "id": 2,
+            "description": "Comedy"
+        },
+        {
+            "id": 3,
+            "description": "Drama"
+        },
+        {
+            "id": 4,
+            "description": "Fantasy"
+        },
+        {
+            "id": 5,
+            "description": "Romance"
+        }
+    ],
+    "author_book": [
+        {
+            "id": 1,
+            "book_id": 1,
+            "author_id": 1
+        },
+        {
+            "id": 1,
+            "book_id": 2,
+            "author_id": 2
+        },
+        {
+            "id": 1,
+            "book_id": 3,
+            "author_id": 3
+        }
+    ],
     "users": {
-        "name": "Brenon Gaymer",
+        "name": "João Gaymer",
         "id": 1
     }
 }
