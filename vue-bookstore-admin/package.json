@@ -9,6 +9,7 @@
     "db:dev": "json-server-relationship --watch db/db.json --port 4000"
   },
   "dependencies": {
+    "axios": "^0.27.2",
     "json-server-relationship": "^0.14.5",
     "pinia": "^2.0.14",
     "vue": "^3.2.37",
