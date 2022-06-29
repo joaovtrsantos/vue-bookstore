@@ -1,43 +1,16 @@
 <script>
-  import { mapState, mapStores, mapActions } from "pinia";
-  import { useCategoryStore } from "@/stores/category";
+  import ListCategory from "../components/category/ListCategory.vue";
+  import FormCategory from "../components/category/FormCategory.vue";
 
- export default {
-  computed: {
-    ...mapStores(useCategoryStore),
-    ...mapState(useCategoryStore, ["categories"]),
-  },
-  methods: {
-    ...mapActions(useCategoryStore, ["getAllCategories"])
-  },
-  async mounted() {
-    try {
-      await this.getAllCategories();
-    } catch(e) {
-      alert(e);
-    }
-  },
- };
+  export default {
+    components: { ListCategory, FormCategory }
+};
 </script>
 <template>
   <main>
-    <form>
-      <input type="text" placeholder="     Pesquisar">
-      <button>Adicionar</button>
-    </form>
+    <FormCategory />
     <div class="div-table">
-      <table>
-        <thead>
-          <th class="border-rad-l">ID</th>
-          <th class="border-rad-r">Descrição</th>
-        </thead>
-        <tbody>
-          <tr v-for="(row, i) of categories" :key="i">
-            <td>{{ row.id }}</td>
-            <td>{{ row.description }}</td>
-          </tr>
-        </tbody>
-      </table>
+    <ListCategory />
     </div>
   </main>
 </template>
