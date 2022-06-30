@@ -1,15 +1,39 @@
+<script>
+import ListBook from "../components/book/ListBook.vue";
+import FormBook from "../components/book/FormBook.vue";
+export default {
+  components: { ListBook, FormBook },
+  data() {
+    return {
+      currentBook: {
+        id: "",
+        title: "",
+        isbn: "",
+        category_id: "",
+        publisher_id: "",
+        quantity: "",
+        price: "",
+        date: "",
+      },
+    };
+  },
+  methods: {
+    prepareToUpdate(book) {
+      Object.assign(this.currentBook, book);
+    },
+  },
+};
+</script>
 <template>
-  <div class="book">
-    <h1>This is an book page</h1>
-  </div>
+  <main>
+    <h1>Cadastro de Livros</h1>
+    <FormBook :currentBook="currentBook" />
+    <div class="div-table">
+      <ListBook @edit="prepareToUpdate" />
+    </div>
+  </main>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .book {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+@import "@/assets/base.css";
 </style>
