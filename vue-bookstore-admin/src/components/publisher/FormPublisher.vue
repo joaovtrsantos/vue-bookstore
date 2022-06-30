@@ -33,37 +33,10 @@ export default {
 </script>
 
 <template>
-    <div class="publisher-form">
-        <input type="text" v-model="publisher.name" />
-        <button @click="save">
+    <form class="form-admin">
+        <input type="text" v-model="publisher.name" class="input-text-admin" />
+        <button @click="save" class="button-admin">
             {{ currentPublisher.id !== "" ? "Salvar" : "Adicionar" }}
         </button>
-    </div>
+    </form>
 </template>
-
-<style scoped>
-.publisher-form input {
-    width: 75%;
-    height: 40px;
-    border-radius: 20px;
-    border: 1px solid gray;
-    padding-left: 20px;
-    font-size: 1.2em;
-}
-
-.publisher-form button {
-    height: 35px;
-    width: 20%;
-    margin-left: 2%;
-    background-color: rgb(63, 63, 125);
-    color: whitesmoke;
-    font-size: 1.2em;
-    border-radius: 20px;
-    border: 0;
-}
-
-.publisher-form {
-    margin: 3% auto;
-    width: 70%;
-}
-</style>

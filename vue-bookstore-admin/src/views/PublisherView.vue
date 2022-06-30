@@ -20,10 +20,15 @@ export default {
 };
 </script>
 <template>
-  <h1>Cadastro de Editoras</h1>
-  <FormPublisher :currentPublisher="currentPublisher" />
-  <ListPublisher @edit="prepareToUpdate" />
+  <main>
+    <h1>Cadastro de Editoras</h1>
+    <FormPublisher :currentPublisher="currentPublisher" />
+    <div class="div-table">
+      <ListPublisher @edit="prepareToUpdate" />
+    </div>
+  </main>
 </template>
 
 <style>
+@import "@/assets/base.css";
 </style>

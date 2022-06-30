@@ -38,14 +38,5 @@ export default {
 };
 </script>
 <template>
-    <div class="publisher-list">
-        <data-table :columns="columns" :items="publishers" @edit="$emit('edit', $event)" @delete="deleteItem" />
-    </div>
+    <data-table :columns="columns" :items="publishers" @edit="$emit('edit', $event)" @delete="deleteItem" />
 </template>
-
-<style scoped>
-.publisher-list {
-    margin: 3% auto;
-    width: 70%;
-}
-</style>

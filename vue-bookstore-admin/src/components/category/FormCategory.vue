@@ -32,11 +32,7 @@ export default {
 
 <template>
   <form class="form-admin">
-    <input
-      type="text"
-      v-model="category.description"
-      class="input-text-admin"
-    />
+    <input type="text" v-model="category.description" class="input-text-admin" />
     <button @click="save" class="button-admin">
       {{ currentCategory.id !== "" ? "Salvar" : "Adicionar" }}
     </button>
