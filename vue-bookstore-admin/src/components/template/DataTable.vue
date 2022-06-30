@@ -22,7 +22,9 @@ export default {
           </span>
         </th>
         <th>
-          <span> <h2>Ações</h2> </span>
+          <span>
+            <h2>Ações</h2>
+          </span>
         </th>
       </tr>
     </thead>
@@ -32,18 +34,8 @@ export default {
           {{ row[column.field] }}
         </td>
         <td>
-          <img
-            @click="$emit('edit', row)"
-            src="@/assets/img/edit.png"
-            alt="Editar"
-            class="table-icons"
-          />
-          <img
-            @click="$emit('delete', row)"
-            src="@/assets/img/delete.png"
-            alt="Apagar"
-            class="table-icons"
-          />
+          <img @click="$emit('edit', row)" src="@/assets/img/edit.png" alt="Update" class="table-icons" />
+          <img @click="$emit('delete', row)" src="@/assets/img/delete.png" alt="Delete" class="table-icons" />
         </td>
       </tr>
     </tbody>

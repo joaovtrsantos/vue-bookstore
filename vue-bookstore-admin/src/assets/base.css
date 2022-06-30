@@ -93,7 +93,7 @@ main {
   height: 10%;
 }
 
-.form-admin > .input-text-admin {
+.form-admin>.input-text-admin {
   width: 30%;
   height: 60%;
   border: 0;
@@ -101,7 +101,7 @@ main {
   border: 1px solid #ccc;
 }
 
-.form-admin > .button-admin {
+.form-admin>.button-admin {
   width: 6%;
   height: 60%;
   border: 0;
@@ -109,7 +109,8 @@ main {
   background: rgb(2, 0, 36);
   color: whitesmoke;
 }
-.form-admin > .button-admin:hover {
+
+.form-admin>.button-admin:hover {
   border-radius: 0 50px 50px 0;
   background: rgba(16, 100, 117, 1);
   color: whitesmoke;
@@ -120,45 +121,48 @@ main {
   justify-content: center;
 }
 
-.div-table > table {
-  width: 40%;
-  text-align: center;
+.div-table>table {
+  width: 50%;
+  text-align: left;
   border-spacing: 0;
 }
 
-.div-table > table > thead {
+.div-table>table>thead {
   background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(18, 18, 48, 1) 35%,
-    rgba(16, 100, 117, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(2, 0, 36, 1) 0%,
+      rgba(18, 18, 48, 1) 35%,
+      rgba(16, 100, 117, 1) 100%);
   color: whitesmoke;
 
 }
 
-.div-table > table > thead > tr > th {
-  width: 15%;
+.div-table>table>thead>tr>th {
+  width: 25%;
+  padding: 0.3%;
 }
 
-.div-table > table > tbody {
+.div-table>table>tbody>tr>td {
+  width: 30%;
+  text-align: left;
+}
+
+.div-table>table>tbody {
   background: rgb(192, 244, 255);
   color: rgb(24, 22, 22);
 }
 
-.div-table > table > thead > tr > td {
+.div-table>table>thead>tr>td {
   font-size: 20px;
 }
 
 .table-icons {
-  width: 15%;
+  width: 1.5rem;
   margin-left: 10%;
 }
+
 .table-icons:hover {
-  width: 16%;
+  width: 1.6rem;
   transform: scale(1.1);
   transition: all 0.5s;
 }
-
-
