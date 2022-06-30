@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import axios from "axios";
 
-export const useBookStore = defineStore({
+export const usePublisherStore = defineStore({
   id: 'publisher',
   state: () => ({
     publishers: []
@@ -12,7 +12,7 @@ export const useBookStore = defineStore({
   actions: {
     async getAllPublishers() {
       try {
-        const { data } = await axios.get("http://http:localhost:4000/publishers");
+        const { data } = await axios.get("http://localhost:4000/publishers");
         this.publishers = data;
         return Promise.resolve();
       } catch (e) {
