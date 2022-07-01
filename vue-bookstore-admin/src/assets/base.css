@@ -121,7 +121,6 @@ main {
 }
 
 .div-table > table {
-  width: 40%;
   text-align: center;
   border-spacing: 0;
 }
@@ -159,6 +158,10 @@ main {
   width: 16%;
   transform: scale(1.1);
   transition: all 0.5s;
+}
+
+.action-column {
+  min-width: 150px;
 }
 
 

@@ -9,11 +9,21 @@ export default {
       type: Array,
       required: true,
     },
+   tableSize: {
+    type: String,
+   }
   },
+  computed: {
+    size() {
+      return {
+        'width': this.tableSize
+      }
+    }
+  }
 };
 </script>
 <template>
-  <table>
+  <table :style="size">
     <thead>
       <tr>
         <th v-for="column of columns" :key="column.field">
@@ -21,7 +31,7 @@ export default {
             <h2>{{ column.label }}</h2>
           </span>
         </th>
-        <th>
+        <th class="action-column">
           <span> <h2>Ações</h2> </span>
         </th>
       </tr>
@@ -49,3 +59,8 @@ export default {
     </tbody>
   </table>
 </template>
+<style scoped>
+  table {
+    width: var(width);
+  }
+</style>

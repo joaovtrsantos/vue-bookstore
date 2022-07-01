@@ -10,6 +10,7 @@ export default {
         { label: "ID", field: "id" },
         { label: "Descrição", field: "description" },
       ],
+      tableSize : '40%',
     };
   },
   computed: {
@@ -40,6 +41,7 @@ export default {
     <data-table
       :columns="columns"
       :items="categories"
+      :tableSize="tableSize"
       @edit="$emit('edit', $event)"
       @delete="deleteItem"
     />
