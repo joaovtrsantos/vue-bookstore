@@ -1,15 +1,34 @@
+<script>
+import ListAuthor from "../components/author/ListAuthor.vue";
+import FormAuthor from "../components/author/FormAuthor.vue";
+export default {
+  components: { ListAuthor, FormAuthor },
+  data() {
+    return {
+      currentAuthor: {
+        id: "",
+        name: "",
+        site: ""
+      },
+    };
+  },
+  methods: {
+    prepareToUpdate(author) {
+      Object.assign(this.currentAuthor, author);
+    },
+  },
+};
+</script>
 <template>
-  <div class="author">
-    <h1>This is an author page</h1>
-  </div>
+  <main>
+    <h1>Cadastro de Autores</h1>
+    <FormAuthor :currentAuthor="currentAuthor" />
+    <div class="div-table">
+      <ListAuthor @edit="prepareToUpdate" />
+    </div>
+  </main>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .author {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
+@import "@/assets/base.css";
 </style>
