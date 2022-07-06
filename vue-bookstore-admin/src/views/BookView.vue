@@ -1,8 +1,9 @@
 <script>
 import ListBook from "../components/book/ListBook.vue";
 import FormBook from "../components/book/FormBook.vue";
+import CadBook from "../components/book/CadBook.vue";
 export default {
-  components: { ListBook, FormBook },
+  components: { ListBook, FormBook, CadBook },
   data() {
     return {
       currentBook: {
@@ -26,8 +27,14 @@ export default {
 </script>
 <template>
   <main>
-    <h1>Cadastro de Livros</h1>
-    <FormBook :currentBook="currentBook" />
+    <h1>Administração de Livros</h1>
+    <!--<FormBook :currentBook="currentBook" /> -->
+    <span class="span-link">
+      <router-link to="cadBook" class="cad-link"> 
+        <p>Cadastrar livro</p>
+        <img src="@/assets/img/add.png" alt="" style="width: 15%; margin-left: 2%">
+      </router-link>
+    </span>
     <div class="div-table">
       <ListBook @edit="prepareToUpdate" />
     </div>

@@ -164,4 +164,25 @@ main {
   min-width: 150px;
 }
 
+.cad-link {
+  color: var(--color-text);
+  width: 15%; 
+  display: flex; 
+  justify-content: center;
+}
+.cad-link:hover {
+  color: rgb(125, 195, 209); 
+  font-size: 105%;
+  transform: scale(1.1);
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+
+.span-link {
+  width: 100%; 
+  display: flex; 
+  justify-content: center;
+  margin-bottom: 0.5%;
+}
+
 
