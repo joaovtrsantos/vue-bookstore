@@ -1,79 +1,80 @@
 <script>
-
+import { mapActions } from "pinia";
+import { useBookStore } from "@/stores/book";
+export default {
+  data() {
+    return {
+      book: {
+        id: "",
+        title: "",
+        isbn: "",
+        category_id: "",
+        publisher_id: "",
+        quantity: "",
+        price: "",
+        date: "",
+      },
+    };
+  },
+  methods: {
+    ...mapActions(useBookStore, ["saveBook"]),
+    async save() {
+      try {
+        const msg = await this.saveBook(this.book);
+        alert(msg);
+        Object.assign(this.book, {
+          currentBook: {
+            id: "",
+            title: "",
+            isbn: "",
+            category_id: "",
+            publisher_id: "",
+            quantity: "",
+            price: "",
+            date: "",
+          },
+        });
+      } catch (e) {
+        alert("Ooops! Algo de errado!");
+      }
+    },
+  },
+};
 </script>
 <template>
-    <div class="form">
-      <div class="tab-content">
-        <div>   
-          <h1>Cadastrar Produto</h1> 
-          <form action="/" method="post">
-          
-          <div class="top-row">
+  <div class="form">
+    <div class="tab-content">
+      <div>   
+        <h1>Cadastrar Produto</h1> 
+        <form action="/" method="post">  
+          <div class="field-wrap">
+            <input type="text" placeholder="Título *" v-model="book.title" required autocomplete="off" />
+          </div>
             <div class="field-wrap">
-              <label>
-                First Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off" />
+              <input type="text" placeholder="ISBN *" v-model="book.isbn" required autocomplete="off"/>
             </div>
-        
+          <div class="row">
             <div class="field-wrap">
-              <label>
-                Last Name<span class="req">*</span>
-              </label>
-              <input type="text" required autocomplete="off"/>
+              <input type="number" placeholder="Categoria(ID) *" v-model="book.category_id" required autocomplete="off"/>
+            </div>
+            <div class="field-wrap">
+              <input type="number" placeholder="Editora(ID) *" v-model="book.publisher_id" required autocomplete="off"/>
             </div>
           </div>
-
-          <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email" required autocomplete="off"/>
-          </div>
-          
-          <div class="field-wrap">
-            <label>
-              Set A Password<span class="req">*</span>
-            </label>
-            <input type="password" required autocomplete="off"/>
-          </div>
-          
-          <button type="submit" class="button button-block">Get Started</button>
-          
-          </form>
-
-        </div>
-        
-        <div id="login">   
-          <h1>Welcome Back!</h1>
-          
-          <form action="/" method="post">
-          
+          <div class="row">
             <div class="field-wrap">
-            <label>
-              Email Address<span class="req">*</span>
-            </label>
-            <input type="email" required autocomplete="off"/>
+              <input type="number" placeholder="Quantidade *" v-model="book.quantity" required autocomplete="off"/>
+            </div>
+            <div class="field-wrap">
+              <input type="number" placeholder="Preço *" v-model="book.price" required autocomplete="off"/>
+            </div>
           </div>
-          
-          <div class="field-wrap">
-            <label>
-              Password<span class="req">*</span>
-            </label>
-            <input type="password" required autocomplete="off"/>
-          </div>
-          
-          <p class="forgot"><a href="#">Forgot Password?</a></p>
-          
-          <button class="button button-block">Log In</button>
-          
-          </form>
-
-        </div>
-        
-      </div><!-- tab-content -->
-      
-</div> <!-- /form -->
+          <button type="submit" @click="save" class="button button-block">Cadastrar</button>
+        </form>
+      </div> 
+       <br>
+    </div> 
+  </div>
 </template>
 <style>
 
@@ -122,7 +123,7 @@
   display: none;
 }
 
-h1 {
+.cad-title {
   text-align: center;
   color: #ffffff;
   font-weight: 300;
@@ -185,17 +186,17 @@ textarea {
   margin-bottom: 40px;
 }
 
-.top-row:after {
+.row:after {
   content: "";
   display: table;
   clear: both;
 }
-.top-row > div {
+.row > div {
   float: left;
   width: 48%;
   margin-right: 4%;
 }
-.top-row > div:last-child {
+.row > div:last-child {
   margin: 0;
 }
 
