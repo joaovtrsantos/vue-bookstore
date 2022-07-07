@@ -1,9 +1,8 @@
 <script>
 import ListBook from "../components/book/ListBook.vue";
-import FormBook from "../components/book/FormBook.vue";
 import CadBook from "../components/book/CadBook.vue";
 export default {
-  components: { ListBook, FormBook, CadBook },
+  components: { ListBook, CadBook },
   data() {
     return {
       currentBook: {

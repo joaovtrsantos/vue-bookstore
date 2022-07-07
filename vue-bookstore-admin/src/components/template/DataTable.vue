@@ -9,17 +9,25 @@ export default {
       type: Array,
       required: true,
     },
-   tableSize: {
-    type: String,
-   }
+    tableSize: {
+      type: String,
+    },
+  },
+  methods: {
+    prepareEdit(book) {
+      console.log("vai editar..");
+      // salvar o currentBook no store
+      // router.push para o cadBook
+      this.$router.push({ name: "cadBook" });
+    },
   },
   computed: {
     size() {
       return {
-        'width': this.tableSize
-      }
-    }
-  }
+        width: this.tableSize,
+      };
+    },
+  },
 };
 </script>
 <template>
@@ -42,7 +50,19 @@ export default {
           {{ row[column.field] }}
         </td>
         <td>
+          <router-link
+            :to="{ name: 'cadBook', params: { item: row } }"
+            v-if="items[0].isbn"
+          >
+            <img
+              @click="prepareEdit(row)"
+              src="@/assets/img/edit.png"
+              alt="Editar"
+              class="table-icons"
+            />
+          </router-link>
           <img
+            v-else
             @click="$emit('edit', row)"
             src="@/assets/img/edit.png"
             alt="Editar"
@@ -60,7 +80,7 @@ export default {
   </table>
 </template>
 <style scoped>
-  table {
-    width: var(width);
-  }
+table {
+  width: var(width);
+}
 </style>

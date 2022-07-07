@@ -16,6 +16,15 @@ export default {
       },
     };
   },
+  // props: {
+  //   item: {
+  //     type: Object,
+  //   },
+  // },
+  mounted() {
+    console.log("verificar o store");
+    console.log("fazer um if para ver se tem currentBook");
+  },
   methods: {
     ...mapActions(useBookStore, ["saveBook"]),
     async save() {
@@ -42,42 +51,82 @@ export default {
 };
 </script>
 <template>
+  <!-- ttt? {{ $route.params.item }}
+  <hr />
+  xxxxxxxx = {{ item.value }} -->
   <div class="form">
     <div class="tab-content">
-      <div>   
-        <h1>Cadastrar Produto</h1> 
-        <form action="/" method="post">  
+      <div>
+        <h1 class="cad-title">Cadastrar Produto</h1>
+        <form>
           <div class="field-wrap">
-            <input type="text" placeholder="Título *" v-model="book.title" required autocomplete="off" />
+            <input
+              type="text"
+              placeholder="Título *"
+              v-model="book.title"
+              required
+              autocomplete="off"
+            />
           </div>
-            <div class="field-wrap">
-              <input type="text" placeholder="ISBN *" v-model="book.isbn" required autocomplete="off"/>
-            </div>
+          <div class="field-wrap">
+            <input
+              type="text"
+              placeholder="ISBN *"
+              v-model="book.isbn"
+              required
+              autocomplete="off"
+            />
+          </div>
           <div class="row">
             <div class="field-wrap">
-              <input type="number" placeholder="Categoria(ID) *" v-model="book.category_id" required autocomplete="off"/>
+              <input
+                type="number"
+                placeholder="Categoria(ID) *"
+                v-model="book.category_id"
+                required
+                autocomplete="off"
+              />
             </div>
             <div class="field-wrap">
-              <input type="number" placeholder="Editora(ID) *" v-model="book.publisher_id" required autocomplete="off"/>
+              <input
+                type="number"
+                placeholder="Editora(ID) *"
+                v-model="book.publisher_id"
+                required
+                autocomplete="off"
+              />
             </div>
           </div>
           <div class="row">
             <div class="field-wrap">
-              <input type="number" placeholder="Quantidade *" v-model="book.quantity" required autocomplete="off"/>
+              <input
+                type="number"
+                placeholder="Quantidade *"
+                v-model="book.quantity"
+                required
+                autocomplete="off"
+              />
             </div>
             <div class="field-wrap">
-              <input type="number" placeholder="Preço *" v-model="book.price" required autocomplete="off"/>
+              <input
+                type="number"
+                placeholder="Preço *"
+                v-model="book.price"
+                required
+                autocomplete="off"
+              />
             </div>
           </div>
-          <button type="submit" @click="save" class="button button-block">Cadastrar</button>
+          <button type="submit" @click="save" class="button button-block">
+            Cadastrar
+          </button>
         </form>
-      </div> 
-       <br>
-    </div> 
+      </div>
+      <br />
+    </div>
   </div>
 </template>
 <style>
-
 .form {
   background: rgba(19, 35, 47, 0.9);
   padding: 40px;
@@ -108,7 +157,7 @@ export default {
   width: 50%;
   text-align: center;
   cursor: pointer;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 .tab-group li a:hover {
   background: #179b77;
@@ -158,7 +207,8 @@ label.highlight {
   color: #ffffff;
 }
 
-input, textarea {
+input,
+textarea {
   font-size: 22px;
   display: block;
   width: 100%;
@@ -169,9 +219,10 @@ input, textarea {
   border: 1px solid #a0b3b0;
   color: #ffffff;
   border-radius: 0;
-  transition: border-color .25s ease, box-shadow .25s ease;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
 }
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: 0;
   border-color: #1ab188;
 }
@@ -208,13 +259,14 @@ textarea {
   font-size: 2rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   background: #1ab188;
   color: #ffffff;
   transition: all 0.5s ease;
   -webkit-appearance: none;
 }
-.button:hover, .button:focus {
+.button:hover,
+.button:focus {
   background: #179b77;
 }
 
