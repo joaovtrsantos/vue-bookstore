@@ -1,6 +1,6 @@
 <script>
 import { mapState, mapStores, mapActions } from "pinia";
-import { useCategoryStore } from "@/stores/category";
+import { useBookStore } from "@/stores/book";
 import DataTable from "../template/DataTable.vue";
 export default {
   components: { DataTable },
@@ -8,20 +8,25 @@ export default {
     return {
       columns: [
         { label: "ID", field: "id" },
-        { label: "Descrição", field: "description" },
+        { label: "Título", field: "title" },
+        { label: "ISBN", field: "isbn" },
+        { label: "Categoria", field: "category_id" },
+        { label: "Editora", field: "publisher_id" },
+        { label: "Quantidade", field: "quantity" },
+        { label: "Preço", field: "price" },
       ],
-      tableSize : '40%',
+      tableSize : '80%',
     };
   },
   computed: {
-    ...mapStores(useCategoryStore),
-    ...mapState(useCategoryStore, ["categories"]),
+    ...mapStores(useBookStore),
+    ...mapState(useBookStore, ["books"]),
   },
   methods: {
-    ...mapActions(useCategoryStore, ["getAllCategories", "deleteCategory"]),
-    async deleteItem(category) {
+    ...mapActions(useBookStore, ["getAllBooks", "deleteBook"]),
+    async deleteItem(book) {
       try {
-        await this.deleteCategory(category.id);
+        await this.deleteBook(book.id);
         alert("Item excluído com sucesso.");
       } catch (e) {
         alert(e);
@@ -30,7 +35,7 @@ export default {
   },
   async mounted() {
     try {
-      await this.getAllCategories();
+      await this.getAllBooks();
     } catch (e) {
       alert(e);
     }
@@ -40,7 +45,7 @@ export default {
 <template>
     <data-table
       :columns="columns"
-      :items="categories"
+      :items="books"
       :tableSize="tableSize"
       @edit="$emit('edit', $event)"
       @delete="deleteItem"

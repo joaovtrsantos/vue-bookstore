@@ -9,11 +9,21 @@ export default {
       type: Array,
       required: true,
     },
+    tableSize: {
+      type: String,
+    },
+  },
+  computed: {
+    size() {
+      return {
+        width: this.tableSize,
+      };
+    },
   },
 };
 </script>
 <template>
-  <table>
+  <table :style="size">
     <thead>
       <tr>
         <th v-for="column of columns" :key="column.field">
@@ -21,10 +31,8 @@ export default {
             <h2>{{ column.label }}</h2>
           </span>
         </th>
-        <th>
-          <span>
-            <h2>Ações</h2>
-          </span>
+        <th class="action-column">
+          <span> <h2>Ações</h2> </span>
         </th>
       </tr>
     </thead>
@@ -34,10 +42,47 @@ export default {
           {{ row[column.field] }}
         </td>
         <td>
-          <img @click="$emit('edit', row)" src="@/assets/img/edit.png" alt="Update" class="table-icons" />
-          <img @click="$emit('delete', row)" src="@/assets/img/delete.png" alt="Delete" class="table-icons" />
+          <router-link
+            :to="{ 
+              name: 'cadBook', 
+              params: { 
+                id: items[i].id, 
+                title: items[i].title, 
+                isbn: items[i].isbn,  
+                category_id: items[i].category_id,
+                publisher_id: items[i].publisher_id,
+                quantity: items[i]. quantity,
+                price: items[i].price
+                } }"
+            v-if="items[0].isbn"
+          >
+            <img
+              @click="prepareEdit(row)"
+              src="@/assets/img/edit.png"
+              alt="Editar"
+              class="table-icons"
+            />
+          </router-link>
+          <img
+            v-else
+            @click="$emit('edit', row)"
+            src="@/assets/img/edit.png"
+            alt="Editar"
+            class="table-icons"
+          />
+          <img
+            @click="$emit('delete', row)"
+            src="@/assets/img/delete.png"
+            alt="Apagar"
+            class="table-icons"
+          />
         </td>
       </tr>
     </tbody>
   </table>
 </template>
+<style scoped>
+table {
+  width: var(width);
+}
+</style>
