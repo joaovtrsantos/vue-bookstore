@@ -28,7 +28,8 @@ export const useAuthorStore = defineStore({
                     "http://localhost:4000/authors",
                     author
                 );
-                this.author.push(data);
+                this.authors.push(data);
+                
                 return Promise.resolve("Author added");
             } catch (e) {
                 console.error(e);
