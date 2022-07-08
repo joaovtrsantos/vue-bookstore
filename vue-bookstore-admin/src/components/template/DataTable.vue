@@ -13,14 +13,6 @@ export default {
       type: String,
     },
   },
-  methods: {
-    prepareEdit(book) {
-      console.log("vai editar..");
-      // salvar o currentBook no store
-      // router.push para o cadBook
-      this.$router.push({ name: "cadBook" });
-    },
-  },
   computed: {
     size() {
       return {
@@ -51,7 +43,17 @@ export default {
         </td>
         <td>
           <router-link
-            :to="{ name: 'cadBook', params: { item: row } }"
+            :to="{ 
+              name: 'cadBook', 
+              params: { 
+                id: items[i].id, 
+                title: items[i].title, 
+                isbn: items[i].isbn,  
+                category_id: items[i].category_id,
+                publisher_id: items[i].publisher_id,
+                quantity: items[i]. quantity,
+                price: items[i].price
+                } }"
             v-if="items[0].isbn"
           >
             <img

@@ -5,12 +5,8 @@ export const useBookStore = defineStore({
   id: "book",
   state: () => ({
     books: [],
-    currentBook: {},
   }),
   actions: {
-    setCurrentBook(book) {
-      Object.assign(this.currentBook, book);
-    },
     async getAllBooks() {
       try {
         const { data } = await axios.get("http://localhost:4000/books");
