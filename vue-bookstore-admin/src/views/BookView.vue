@@ -27,7 +27,6 @@ export default {
 <template>
   <main>
     <h1>Administração de Livros</h1>
-    <!--<FormBook :currentBook="currentBook" /> -->
     <span class="span-link">
       <router-link to="cadBook" class="cad-link"> 
         <p>Cadastrar livro</p>
