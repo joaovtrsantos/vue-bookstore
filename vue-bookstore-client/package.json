@@ -1,16 +1,13 @@
 {
-  "name": "vue-library",
+  "name": "vue-bookstore-client",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview z--port 4173",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
-    "db:dev": "json-server-relationship --watch db/db.json --port 4000"
+    "preview": "vite preview --port 4173",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "axios": "^0.27.2",
-    "json-server-relationship": "^0.14.5",
     "pinia": "^2.0.14",
     "vue": "^3.2.37",
     "vue-router": "^4.0.16"
