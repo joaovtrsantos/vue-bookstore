@@ -25,7 +25,7 @@ export const usePublisherStore = defineStore({
     async addPublisher(publisher) {
       try {
         const { data } = await axios.post(
-          "http://localhost:4000/categories",
+          "http://localhost:4000/publishers",
           publisher
         );
         this.publishers.push(data);

@@ -63,6 +63,23 @@ export default {
               class="table-icons"
             />
           </router-link>
+          <router-link
+            :to="{ 
+              name: 'cadPublisher', 
+              params: { 
+                id: items[i].id, 
+                name: items[i].name, 
+                site: items[i].site,  
+                } }"
+            v-else-if="items[0].site"
+          >
+            <img
+              @click="prepareEdit(row)"
+              src="@/assets/img/edit.png"
+              alt="Editar"
+              class="table-icons"
+            />
+          </router-link>
           <img
             v-else
             @click="$emit('edit', row)"

@@ -10,6 +10,7 @@ export default {
         { label: "ID", field: "id" },
         { label: "Nome", field: "name" },
       ],
+      tableSize : '40%',
     };
   },
   computed: {
@@ -37,5 +38,11 @@ export default {
 };
 </script>
 <template>
-  <data-table :columns="columns" :items="authors" @edit="$emit('edit', $event)" @delete="deleteItem" />
+  <data-table 
+  :columns="columns" 
+  :items="authors"
+  :tableSize="tableSize" 
+  @edit="$emit('edit', $event)" 
+  @delete="deleteItem" 
+  />
 </template>

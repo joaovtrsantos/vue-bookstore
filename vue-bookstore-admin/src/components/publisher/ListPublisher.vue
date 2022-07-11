@@ -38,5 +38,10 @@ export default {
 };
 </script>
 <template>
-    <data-table :columns="columns" :items="publishers" @edit="$emit('edit', $event)" @delete="deleteItem" />
+    <data-table 
+        :columns="columns" 
+        :items="publishers" 
+        @edit="$emit('edit', $event)" 
+        @delete="deleteItem" 
+    />
 </template>

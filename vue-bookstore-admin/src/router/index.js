@@ -40,6 +40,12 @@ const router = createRouter({
       component: () => import("../components/book/CadBook.vue"),
       props: true,
     },
+    {
+      path: "/cadPublisher",
+      name: "cadPublisher",
+      component: () => import("../components/publisher/CadPublisher.vue"),
+      props: true,
+    },
   ],
 });
 
