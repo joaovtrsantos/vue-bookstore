@@ -41,7 +41,7 @@ export default {
         <td v-for="column of columns" :key="column.field">
           {{ row[column.field] }}
         </td>
-        <td>
+        <td class="column-add-edit">
           <router-link
             :to="{ 
               name: 'cadBook', 
@@ -101,5 +101,9 @@ export default {
 <style scoped>
 table {
   width: var(width);
+}
+
+.column-add-edit {
+  text-align: center;
 }
 </style>
