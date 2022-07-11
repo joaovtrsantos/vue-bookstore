@@ -7,8 +7,7 @@ export default {
     return {
       currentAuthor: {
         id: "",
-        name: "",
-        site: ""
+        name: ""
       },
     };
   },

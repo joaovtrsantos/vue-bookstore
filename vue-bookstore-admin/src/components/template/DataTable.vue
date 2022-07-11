@@ -41,7 +41,7 @@ export default {
         <td v-for="column of columns" :key="column.field">
           {{ row[column.field] }}
         </td>
-        <td>
+        <td class="column-add-edit">
           <router-link
             :to="{ 
               name: 'cadBook', 
@@ -55,6 +55,23 @@ export default {
                 price: items[i].price
                 } }"
             v-if="items[0].isbn"
+          >
+            <img
+              @click="prepareEdit(row)"
+              src="@/assets/img/edit.png"
+              alt="Editar"
+              class="table-icons"
+            />
+          </router-link>
+          <router-link
+            :to="{ 
+              name: 'cadPublisher', 
+              params: { 
+                id: items[i].id, 
+                name: items[i].name, 
+                site: items[i].site,  
+                } }"
+            v-else-if="items[0].site"
           >
             <img
               @click="prepareEdit(row)"
@@ -84,5 +101,9 @@ export default {
 <style scoped>
 table {
   width: var(width);
+}
+
+.column-add-edit {
+  text-align: center;
 }
 </style>

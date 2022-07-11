@@ -5,9 +5,6 @@
 <template>
   <header>
     <nav>
-      <RouterLink to="/">Home</RouterLink>
-    </nav>
-    <nav>
       <RouterLink to="/book">Livros</RouterLink>
     </nav>
     <nav>
