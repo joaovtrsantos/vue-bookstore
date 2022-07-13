@@ -9,7 +9,9 @@ export const useBookStore = defineStore({
   actions: {
     async getAllBooks() {
       try {
-        const { data } = await axios.get("http://localhost:4000/books");
+        const { data } = await axios.get(
+          "http://localhost:4000/books?expand=category&expand=publisher"
+        );
         this.books = data;
         return Promise.resolve();
       } catch (e) {
