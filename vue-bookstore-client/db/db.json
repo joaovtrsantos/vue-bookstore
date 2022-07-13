@@ -4,8 +4,8 @@
       "id": 1,
       "title": "The Lord of the Rings",
       "isbn": "9788845292613",
-      "category_id": 4,
-      "publisher_id": 1,
+      "categoryId": 4,
+      "publisherId": 1,
       "quantity": 7,
       "price": 59.99,
       "ft_book": "9788845292613.jpg"
@@ -14,8 +14,8 @@
       "id": 2,
       "title": "Harry Potter",
       "isbn": "9780590353403",
-      "category_id": 4,
-      "publisher_id": 2,
+      "categoryId": 4,
+      "publisherId": 2,
       "quantity": 10,
       "price": 45.99,
       "ft_book": "9780590353403.jpg"
@@ -24,11 +24,21 @@
       "id": 3,
       "title": "1984",
       "isbn": "9780436350221",
-      "category_id": 5,
-      "publisher_id": 3,
+      "categoryId": 5,
+      "publisherId": 3,
       "quantity": 3,
       "price": 19.99,
       "ft_book": "9780436350221.jpg"
+    },
+    {
+      "id": 4,
+      "title": "teste",
+      "isbn": "4545454544545",
+      "categoryId": "2",
+      "publisherId": "3",
+      "quantity": "15",
+      "price": "5",
+      "ft_book": ""
     }
   ],
   "authors": [
@@ -102,7 +112,7 @@
     }
   ],
   "users": {
-    "name": "Brenon Gaymer",
+    "name": "Brenon",
     "id": 1
   }
 }

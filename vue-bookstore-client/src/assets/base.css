@@ -320,3 +320,23 @@ textarea {
   margin: 1%;
 }
 
+.page-book {
+  display: flex;
+  justify-content: space-around;
+}
+.livros {
+  width: 20%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background: rgb(192, 244, 255);
+  color: black;
+  border-radius: 5px;
+  padding-top: 1%;
+}
+
+.img-book {
+  width: 50%;
+  margin-bottom: 5%;
+}
+
