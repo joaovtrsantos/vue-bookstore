@@ -26,7 +26,7 @@ export default {
   <div class="page-book">
     <section v-for="(row, i) of items" :key="i" class="livros">
       <img
-        v-if="row.ft_book != ''"
+        v-if="row.ft_book"
         :src="'static/' + row.ft_book"
         alt=""
         class="img-book"

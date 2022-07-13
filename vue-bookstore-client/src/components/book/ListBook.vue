@@ -8,7 +8,7 @@ export default {
     return {
       columns: [
         { label: "Título", field: "title" },
-        { label: "Editora", field: "publisher_id" },
+        { label: "Editora", field: "publisherId" },
         { label: "Preço", field: "price" },
       ],
       tableSize : '80%',

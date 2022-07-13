@@ -53,11 +53,11 @@ export const useCategoryStore = defineStore({
         return await this.addCategory(category);
       }
     },
-    async deleteCategory(category_id) {
+    async deleteCategory(categoryId) {
       try {
-        await axios.delete(`http://localhost:4000/categories/${category_id}`);
+        await axios.delete(`http://localhost:4000/categories/${categoryId}`);
         const index = this.categories.findIndex(
-          (category) => category.id === category_id
+          (category) => category.id === categoryId
         );
         this.categories.splice(index, 1);
         return Promise.resolve();

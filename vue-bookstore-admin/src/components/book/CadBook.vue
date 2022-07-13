@@ -8,8 +8,8 @@ export default {
         id: "",
         title: "",
         isbn: "",
-        category_id: "",
-        publisher_id: "",
+        categoryId: "",
+        publisherId: "",
         quantity: "",
         price: "",
       },
@@ -25,7 +25,7 @@ export default {
       try {
         if(
           this.book.title != "" && this.book.isbn != "" && 
-          this.book.category_id != "" && this.book.publisher_id != "" && 
+          this.book.categoryId != "" && this.book.publisherId != "" && 
           this.book.quantity != "" && this.book.price != ""
           ) {
             const msg = await this.saveBook(this.book);
@@ -71,7 +71,7 @@ export default {
               <input
                 type="number"
                 placeholder="Categoria(ID) *"
-                v-model="book.category_id"
+                v-model="book.categoryId"
                 required
                 autocomplete="off"
                 class="input-cad-book"
@@ -81,7 +81,7 @@ export default {
               <input
                 type="number"
                 placeholder="Editora(ID) *"
-                v-model="book.publisher_id"
+                v-model="book.publisherId"
                 required
                 autocomplete="off"
                 class="input-cad-book"
