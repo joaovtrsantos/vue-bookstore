@@ -7,15 +7,6 @@
     <nav>
       <RouterLink to="/book">Livros</RouterLink>
     </nav>
-    <nav>
-      <RouterLink to="/category">Categorias</RouterLink>
-    </nav>
-    <nav>
-      <RouterLink to="/publisher">Editoras</RouterLink>
-    </nav>
-    <nav>
-      <RouterLink to="/author">Autores</RouterLink>
-    </nav>
   </header>
   <RouterView />
 </template>

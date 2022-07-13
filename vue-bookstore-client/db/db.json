@@ -8,7 +8,7 @@
       "publisher_id": 1,
       "quantity": 7,
       "price": 59.99,
-      "date": 1954
+      "ft_book": "9788845292613.jpg"
     },
     {
       "id": 2,
@@ -18,7 +18,7 @@
       "publisher_id": 2,
       "quantity": 10,
       "price": 45.99,
-      "date": 2001
+      "ft_book": "9780590353403.jpg"
     },
     {
       "id": 3,
@@ -28,7 +28,7 @@
       "publisher_id": 3,
       "quantity": 3,
       "price": 19.99,
-      "date": 1949
+      "ft_book": "9780436350221.jpg"
     }
   ],
   "authors": [

@@ -315,4 +315,8 @@ textarea {
   text-align: right;
 }
 
+.title {
+  text-align: center;
+  margin: 1%;
+}
 

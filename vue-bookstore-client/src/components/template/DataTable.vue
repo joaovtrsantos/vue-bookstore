@@ -27,7 +27,7 @@ export default {
 
 
       <div v-for="(row, i) of items" :key="i" class="livros">
-        <img src="@/assets/img/livro.png" alt="" class="img-book">
+        <img :src="'static/'+row.ft_book" alt="" class="img-book">
         <h3>Livro - {{ row.title }}</h3>
         <h5>Editora - {{row.publisher_id}} </h5>
         <h2 style="font-weight: bold">R$ {{ row.price }}</h2>
@@ -50,6 +50,7 @@ main {
   background: rgb(192, 244, 255); 
   color: black;
   border-radius: 5px;
+  padding-top: 1%;
 }
 
 .img-book {
