@@ -321,8 +321,10 @@ textarea {
 }
 
 .page-book {
+  width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  padding-left: 4%;
 }
 .livros {
   width: 20%;
@@ -333,6 +335,7 @@ textarea {
   color: black;
   border-radius: 5px;
   padding-top: 1%;
+  margin: 2%;
 }
 
 .img-book {
