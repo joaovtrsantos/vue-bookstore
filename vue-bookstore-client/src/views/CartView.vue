@@ -1,9 +1,8 @@
 <script>
-import ListBook from "../components/book/ListBook.vue";
-
+import ListCart from "../components/cart/ListCart.vue";
 
 export default {
-  components: { ListBook },
+  components: { ListCart },
   data() {
     return {
       currentBook: {
@@ -27,10 +26,9 @@ export default {
 </script>
 <template>
   <main>
-    <router-link to="/cart">Carrinho</router-link>
-    <h1 class="title">Administração de Livros</h1>
+    <h1 class="title">Carrinho de Compras</h1>
     <div class="div-table">
-      <ListBook @edit="prepareToUpdate" />
+      <ListCart @edit="prepareToUpdate" />
     </div>
   </main>
 </template>
