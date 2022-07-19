@@ -111,11 +111,6 @@
       "id": 2,
       "bookId": 2,
       "quantity": 2
-    },
-    {
-      "bookId": 3,
-      "quantity": 1,
-      "id": 3
     }
   ],
   "users": {

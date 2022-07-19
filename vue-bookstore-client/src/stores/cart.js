@@ -55,11 +55,11 @@ export const useCartStore = defineStore({
         return await this.addBook(book);
       }
     },
-    async deleteBook(book_id) {
+    async deleteItemCart(cart_id) {
       try {
-        await axios.delete(`http://localhost:4000/books/${book_id}`);
-        const index = this.books.findIndex((book) => book.id === book_id);
-        this.books.splice(index, 1);
+        await axios.delete(`http://localhost:4000/carts/${cart_id}`);
+        const index = this.carts.findIndex((cart) => cart.id === cart_id);
+        this.carts.splice(index);
         return Promise.resolve();
       } catch (e) {
         return Promise.reject("Erro ao excluir");
