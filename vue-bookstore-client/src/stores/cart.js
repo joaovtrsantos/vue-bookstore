@@ -37,24 +37,6 @@ export const useCartStore = defineStore({
         return Promise.reject(e);
       }
     },
-    async updateBook(book) {
-      try {
-        await axios.put(`http://localhost:4000/books/${book.id}`, book);
-        const index = this.books.findIndex((b) => b.id === book.id);
-        this.books.splice(index, 1, { ...book });
-        return Promise.resolve("Livro alterado com sucesso!");
-      } catch (e) {
-        console.error(e);
-        return Promise.reject(e);
-      }
-    },
-    async saveBook(book) {
-      if (book.id) {
-        return await this.updateBook(book);
-      } else {
-        return await this.addBook(book);
-      }
-    },
     async deleteItemCart(cart_id) {
       try {
         await axios.delete(`http://localhost:4000/carts/${cart_id}`);

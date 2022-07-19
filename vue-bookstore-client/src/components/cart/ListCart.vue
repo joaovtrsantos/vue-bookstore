@@ -1,24 +1,31 @@
 <script>
 import { mapState, mapStores, mapActions } from "pinia";
 import { useCartStore } from "@/stores/cart";
-import DataTable from "../template/DataTable.vue";
+import { useBookStore } from "@/stores/book";
+
 export default {
-  components: { DataTable },
   data() {
     return {
       columns: [
         { label: "Título", field: "title" },
         { label: "Editora", field: "publisherId" },
         { label: "Preço", field: "price" },
-      ]
+      ],
+      totalCart: {
+        totalItems: 0,
+        totalPrice: 0,
+      }
     };
   },
   computed: {
     ...mapStores(useCartStore),
     ...mapState(useCartStore, ["carts"]),
+    ...mapStores(useBookStore),
+    ...mapState(useBookStore, ["books"]),
   },
   methods: {
     ...mapActions(useCartStore, ["getAllCarts", "deleteItemCart"]),
+    ...mapActions(useBookStore, ["editBookQuantity"]),
     async deleteItem(cart) {
       try {
         await this.deleteItemCart(cart.id);
@@ -27,17 +34,25 @@ export default {
         alert(e);
       }
     },
-    async buyItems(carts) {
+    buyItems(carts, quantityBuy) {
+      console.log(carts[0].book.quantity);
+      console.log(carts[0].quantity);
       carts.forEach(cart => {
+        this.editBookQuantity(cart.book, cart.quantity);
         this.deleteItem(cart);
       });
-      // try {
-      //   await this.deleteItemCart(cart.id);
-      //   alert("Item excluído com sucesso.");
-      // } catch (e) {
-      //   alert(e);
-      // }
     },
+    calcTotalCart(carts, totalCart) {
+      var n = 0;
+      var price = 0;
+      carts.forEach(cart => {
+        n++;
+        price = price + cart.book.price * cart.quantity;
+      });
+      this.totalCart.totalItems = n;
+      this.totalCart.totalPrice = price;
+      return totalCart;
+    }
   },
   async mounted() {
     try {
@@ -93,9 +108,10 @@ export default {
       </article>
     </div>
   </div>
+
   <div style="background: whitesmoke; color: black; width: 20%; margin-right: 5%; height: 200px; padding: 3%; text-align: center;">
     <h6 style="text-align: justify">Seu pedido se qualifica para Frete GRÁTIS. </h6>
-    <h3>Subtotal (2 itens): <br/> R$ 168.48</h3>
+    <h3>Subtotal ({{ calcTotalCart(carts, totalCart).totalItems }} itens): <br/> R$ {{ calcTotalCart(carts, totalCart).totalPrice.toFixed(2) }}</h3>
     <button @click="buyItems(carts)" style="background: yellow;">Fechar pedido</button>
   </div>
 </div>

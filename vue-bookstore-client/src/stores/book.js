@@ -59,5 +59,22 @@ export const useBookStore = defineStore({
         return Promise.reject("Erro ao excluir");
       }
     },
+    async editBookQuantity(book, quantity) {
+      try {
+        book.quantity = book.quantity - quantity;
+        this.saveBook(book);
+        return Promise.resolve();
+      } catch (e) {
+        return Promise.reject("Erro ao editar quantidade de livro");
+      }
+      // try {
+      //   await axios.delete(`http://localhost:4000/books/${book_id}`);
+      //   const index = this.books.findIndex((book) => book.id === book_id);
+      //   this.books.splice(index, 1);
+      //   return Promise.resolve();
+      // } catch (e) {
+      //   return Promise.reject("Erro ao excluir");
+      // }
+    },
   },
 });
