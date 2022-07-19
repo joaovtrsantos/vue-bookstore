@@ -35,7 +35,6 @@ export default {
     async addItemCart(book) {
       try {
         await this.addToCart(book);
-        alert('Item adicionado ao carrinho.');
       } catch (e) {
         alert(e);
       } 

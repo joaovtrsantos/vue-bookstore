@@ -14,7 +14,8 @@ export default {
       totalCart: {
         totalItems: 0,
         totalPrice: 0,
-      }
+      },
+      bought: false,
     };
   },
   computed: {
@@ -34,13 +35,23 @@ export default {
         alert(e);
       }
     },
-    buyItems(carts, quantityBuy) {
+    buyItems(carts) {
       console.log(carts[0].book.quantity);
       console.log(carts[0].quantity);
+      var error = 0;
       carts.forEach(cart => {
-        this.editBookQuantity(cart.book, cart.quantity);
-        this.deleteItem(cart);
+        if(cart.book.quantity < cart.quantity) {
+          alert("O livro " + cart.book.title + " não possui examplares suficiente, temos " + cart.book.quantity + " unidade(s)");
+          error++;
+        }
       });
+      if(error === 0) {
+        carts.forEach(cart => {
+          this.editBookQuantity(cart.book, cart.quantity);
+          this.deleteItem(cart);
+          this.bought = true;
+        });
+      }   
     },
     calcTotalCart(carts, totalCart) {
       var n = 0;
@@ -64,7 +75,9 @@ export default {
 };
 </script>
 <template>
-<div style="width: 100%; display: flex; justify-content: space-between;">
+<div v-if="bought === true">compra finalizada</div>
+<div v-else-if="!carts[0]">carrinho vazio</div>
+<div v-else style="width: 100%; display: flex; justify-content: space-between;">
   <div style="width: 65%; margin-left: 5%;display: flex; flex-flow: column; align-items: center; ">
     <div v-for="(row, i) of carts" :key="i" style="background: whitesmoke; width: 100%; display: flex; justify-content: space-between; color: black;">
       <article style="width: 100%; border-top: 1px solid #ccc">
@@ -83,17 +96,22 @@ export default {
             <div>
               <h2>{{row.book.title}}</h2>
               <h4>por Brenon Paul</h4>
-              <h6 v-if="row.book.quantity > 0" style="color: green">Em estoque</h6>
+              <h6 v-if="row.book.quantity >= row.quantity" style="color: green">Em estoque</h6>
               <h6 v-else style="color: red">Indisponível</h6>
               <label for="quantity">
                 Quantidade
                 <select v-model="row.quantity">
-                  <option disabled value="">Escolha um item</option>
+                  <option disabled value="">Escolha a quantidade</option>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                  <option>9</option>
                 </select>
-                {{row.quantity}}
               </label>
               <br>
               <button @click="deleteItem(row)">Excluir</button>
