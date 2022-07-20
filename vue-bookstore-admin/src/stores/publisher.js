@@ -28,6 +28,8 @@ export const usePublisherStore = defineStore({
           "http://localhost:4000/publishers",
           publisher
         );
+        setTimeout(() => {
+        },15);
         this.publishers.push(data);
         return Promise.resolve("Publisher added");
       } catch (e) {
@@ -41,6 +43,8 @@ export const usePublisherStore = defineStore({
           `http://localhost:4000/publishers/${publisher.id}`,
           publisher
         );
+        setTimeout(() => {
+        },15);
         const index = this.publishers.findIndex((p) => p.id === publisher.id);
         this.publishers.splice(index, 1, { ...publisher });
         return Promise.resolve("Publisher changed");

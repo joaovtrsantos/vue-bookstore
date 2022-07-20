@@ -24,6 +24,8 @@ export const useBookStore = defineStore({
     async addBook(book) {
       try {
         const { data } = await axios.post("http://localhost:4000/books", book);
+        setTimeout(() => {
+        },15);
         this.books.push(data);
         return Promise.resolve("Livro adicionada com sucesso!");
       } catch (e) {
@@ -34,6 +36,8 @@ export const useBookStore = defineStore({
     async updateBook(book) {
       try {
         await axios.put(`http://localhost:4000/books/${book.id}`, book);
+        setTimeout(() => {
+        },15);
         const index = this.books.findIndex((b) => b.id === book.id);
         this.books.splice(index, 1, { ...book });
         return Promise.resolve("Livro alterado com sucesso!");

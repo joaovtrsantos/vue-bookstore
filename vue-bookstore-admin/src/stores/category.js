@@ -25,6 +25,8 @@ export const useCategoryStore = defineStore({
           "http://localhost:4000/categories",
           category
         );
+        setTimeout(() => {
+        },15);
         this.categories.push(data);
         return Promise.resolve("Categoria adicionada com sucesso!");
       } catch (e) {
@@ -38,6 +40,8 @@ export const useCategoryStore = defineStore({
           `http://localhost:4000/categories/${category.id}`,
           category
         );
+        setTimeout(() => {
+        },15);
         const index = this.categories.findIndex((c) => c.id === category.id);
         this.categories.splice(index, 1, { ...category });
         return Promise.resolve("Categoria alterada com sucesso!");
