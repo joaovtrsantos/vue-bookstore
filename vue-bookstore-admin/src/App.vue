@@ -18,9 +18,6 @@ import { RouterLink, RouterView } from "vue-router";
     </nav>
   </header>
   <RouterView />
-  <footer>
-    <p>JB Produções©</p>
-  </footer>
 </template>
 
 <style>
@@ -43,27 +40,6 @@ header {
   font-size: 1.5em;
   display: flex;
   align-items: center;
-}
-
-footer {
-  height: 10%;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(18, 18, 48, 1) 35%,
-    rgba(16, 100, 117, 1) 100%
-  );
-  color: whitesmoke;
-  font-size: 1.5em;
-  align-items: center;
-  bottom: 0;
-}
-
-footer p {
-  padding-top: 1em;
-  font-size: medium;
-  text-align: center;
 }
 
 nav {
