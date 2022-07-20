@@ -26,6 +26,7 @@ export const useCartStore = defineStore({
       const { data } = await axios.get(
         "http://localhost:4000/carts?expand=book"
       );
+
       var itemsCart = data;
       itemsCart.forEach(cart => {
         if(cart.bookId === book.id) {
@@ -33,12 +34,14 @@ export const useCartStore = defineStore({
           exist = true;
         }
       });
+      
       if(exist != true) {
         try {
           const itemCart = {
             bookId: book.id,
             quantity: 1
           };
+
           const { data } = await axios.post("http://localhost:4000/carts", itemCart);
           this.carts.push(data);
           alert('Item adicionado ao carrinho.');

@@ -4,8 +4,13 @@
 
 <template>
   <header>
-    <nav>
+    <nav class="nav">
       <RouterLink to="/book">Livros</RouterLink>
+      <input type="search" class="input-search" placeholder="   Pesquise por um livro...">
+      <router-link to="/cart" class="link-cart">
+        <p class="text-cart">carrinho</p>
+        <img src="static/carrinho.png" alt="carrinho" class="img-cart">
+      </router-link>
     </nav>
   </header>
   <RouterView />
