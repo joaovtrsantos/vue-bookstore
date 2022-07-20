@@ -87,22 +87,34 @@
   "author_book": [
     {
       "id": 1,
-      "book_id": 1,
-      "author_id": 1
+      "bookId": 1,
+      "authorId": 1
     },
     {
       "id": 1,
-      "book_id": 2,
-      "author_id": 2
+      "bookId": 2,
+      "authorId": 2
     },
     {
       "id": 1,
-      "book_id": 3,
-      "author_id": 3
+      "bookId": 3,
+      "authorId": 3
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "bookId": 1,
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "bookId": 2,
+      "quantity": 2
     }
   ],
   "users": {
-    "name": "Brenon Gaymer",
+    "name": "Brenon",
     "id": 1
   }
 }

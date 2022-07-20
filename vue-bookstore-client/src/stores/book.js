@@ -21,16 +21,6 @@ export const useBookStore = defineStore({
         return Promise.reject("Erro desconhecido ao consultar 'Books'");
       }
     },
-    async addBook(book) {
-      try {
-        const { data } = await axios.post("http://localhost:4000/books", book);
-        this.books.push(data);
-        return Promise.resolve("Livro adicionada com sucesso!");
-      } catch (e) {
-        console.error(e);
-        return Promise.reject(e);
-      }
-    },
     async updateBook(book) {
       try {
         await axios.put(`http://localhost:4000/books/${book.id}`, book);
@@ -42,21 +32,13 @@ export const useBookStore = defineStore({
         return Promise.reject(e);
       }
     },
-    async saveBook(book) {
-      if (book.id) {
-        return await this.updateBook(book);
-      } else {
-        return await this.addBook(book);
-      }
-    },
-    async deleteBook(book_id) {
+    async editBookQuantity(book, quantity) {
       try {
-        await axios.delete(`http://localhost:4000/books/${book_id}`);
-        const index = this.books.findIndex((book) => book.id === book_id);
-        this.books.splice(index, 1);
+        book.quantity = book.quantity - quantity;
+        this.updateBook(book);
         return Promise.resolve();
       } catch (e) {
-        return Promise.reject("Erro ao excluir");
+        return Promise.reject("Erro ao editar quantidade de livro");
       }
     },
   },
