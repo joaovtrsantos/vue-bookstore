@@ -49,8 +49,8 @@ export default {
                 id: items[i].id, 
                 title: items[i].title, 
                 isbn: items[i].isbn,  
-                category_id: items[i].category_id,
-                publisher_id: items[i].publisher_id,
+                categoryId: items[i].categoryId,
+                publisherId: items[i].publisherId,
                 quantity: items[i]. quantity,
                 price: items[i].price
                 } }"

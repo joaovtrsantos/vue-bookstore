@@ -4,31 +4,31 @@
       "id": 1,
       "title": "The Lord of the Rings",
       "isbn": "9788845292613",
-      "category_id": 4,
-      "publisher_id": 1,
+      "categoryId": 4,
+      "publisherId": 1,
       "quantity": 7,
       "price": 59.99,
-      "date": 1954
+      "ft_book": "9788845292613.jpg"
     },
     {
       "id": 2,
       "title": "Harry Potter",
       "isbn": "9780590353403",
-      "category_id": 4,
-      "publisher_id": 2,
+      "categoryId": 4,
+      "publisherId": 2,
       "quantity": 10,
       "price": 45.99,
-      "date": 2001
+      "ft_book": "9780590353403.jpg"
     },
     {
       "id": 3,
       "title": "1984",
       "isbn": "9780436350221",
-      "category_id": 5,
-      "publisher_id": 3,
+      "categoryId": 5,
+      "publisherId": 3,
       "quantity": 3,
       "price": 19.99,
-      "date": 1949
+      "ft_book": "9780436350221.jpg"
     }
   ],
   "authors": [
@@ -87,22 +87,34 @@
   "author_book": [
     {
       "id": 1,
-      "book_id": 1,
-      "author_id": 1
+      "bookId": 1,
+      "authorId": 1
     },
     {
       "id": 1,
-      "book_id": 2,
-      "author_id": 2
+      "bookId": 2,
+      "authorId": 2
     },
     {
       "id": 1,
-      "book_id": 3,
-      "author_id": 3
+      "bookId": 3,
+      "authorId": 3
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "bookId": 1,
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "bookId": 2,
+      "quantity": 2
     }
   ],
   "users": {
-    "name": "Brenon Gaymer",
+    "name": "Brenon",
     "id": 1
   }
 }

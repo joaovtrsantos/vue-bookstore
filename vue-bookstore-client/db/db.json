@@ -1,0 +1,118 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Lord of the Rings",
+      "isbn": "9788845292613",
+      "categoryId": 4,
+      "publisherId": 1,
+      "quantity": 7,
+      "price": 59.99,
+      "ft_book": "9788845292613.jpg"
+    },
+    {
+      "id": 2,
+      "title": "Harry Potter",
+      "isbn": "9780590353403",
+      "categoryId": 4,
+      "publisherId": 2,
+      "quantity": 10,
+      "price": 45.99,
+      "ft_book": "9780590353403.jpg"
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "isbn": "9780436350221",
+      "categoryId": 5,
+      "publisherId": 3,
+      "quantity": 3,
+      "price": 19.99,
+      "ft_book": "9780436350221.jpg"
+    },
+    {
+      "id": 4,
+      "title": "teste",
+      "isbn": "4545454544545",
+      "categoryId": "2",
+      "publisherId": "3",
+      "quantity": "15",
+      "price": "5",
+      "ft_book": ""
+    }
+  ],
+  "authors": [
+    {
+      "id": 1,
+      "name": "J.R.R Tolkien"
+    },
+    {
+      "id": 2,
+      "name": "George Orwell"
+    },
+    {
+      "id": 3,
+      "name": "J.K Rowling"
+    }
+  ],
+  "publishers": [
+    {
+      "id": 1,
+      "name": "Martins Fontess",
+      "site": "https://www.martinsfontespaulista.com.br"
+    },
+    {
+      "id": 2,
+      "name": "Rocco",
+      "site": "https://www.rocco.com.br"
+    },
+    {
+      "id": 3,
+      "name": "Principis",
+      "site": "https://www.cirandacultural.com.br"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "description": "Action"
+    },
+    {
+      "id": 2,
+      "description": "Comedy"
+    },
+    {
+      "id": 3,
+      "description": "Drama"
+    },
+    {
+      "id": 4,
+      "description": "Fantasy"
+    },
+    {
+      "id": 5,
+      "description": "Romance"
+    }
+  ],
+  "author_book": [
+    {
+      "id": 1,
+      "book_id": 1,
+      "author_id": 1
+    },
+    {
+      "id": 1,
+      "book_id": 2,
+      "author_id": 2
+    },
+    {
+      "id": 1,
+      "book_id": 3,
+      "author_id": 3
+    }
+  ],
+  "users": {
+    "name": "Brenon",
+    "id": 1
+  }
+}

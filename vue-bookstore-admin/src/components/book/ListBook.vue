@@ -1,21 +1,21 @@
 <script>
 import { mapState, mapStores, mapActions } from "pinia";
 import { useBookStore } from "@/stores/book";
-import DataTable from "../template/DataTable.vue";
+import DataTableBook from "../template/DataTableBook.vue";
 export default {
-  components: { DataTable },
+  components: { DataTableBook },
   data() {
     return {
       columns: [
         { label: "ID", field: "id" },
         { label: "Título", field: "title" },
         { label: "ISBN", field: "isbn" },
-        { label: "Categoria", field: "category_id" },
-        { label: "Editora", field: "publisher_id" },
-        { label: "Quantidade", field: "quantity" },
+        { label: "Categoria", field: "categoryId" },
+        { label: "Editora", field: "publisherId" },
+        { label: "Qtd", field: "quantity" },
         { label: "Preço", field: "price" },
       ],
-      tableSize : '80%',
+      tableSize: "90%",
     };
   },
   computed: {
@@ -43,11 +43,11 @@ export default {
 };
 </script>
 <template>
-    <data-table
-      :columns="columns"
-      :items="books"
-      :tableSize="tableSize"
-      @edit="$emit('edit', $event)"
-      @delete="deleteItem"
-    />
+  <data-table-book
+    :columns="columns"
+    :items="books"
+    :tableSize="tableSize"
+    @edit="$emit('edit', $event)"
+    @delete="deleteItem"
+  />
 </template>

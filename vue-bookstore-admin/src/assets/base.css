@@ -136,9 +136,8 @@ main {
 
 }
 
-.div-table>table>thead>tr>th {
-  width: 25%;
-  padding: 0.3%;
+#item-center {
+  text-align: center;
 }
 
 .div-table>table>tbody>tr>td {
