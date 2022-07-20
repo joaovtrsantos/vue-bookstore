@@ -43,13 +43,13 @@ export default {
     </thead>
     <tbody>
       <tr v-for="(row, i) of items" :key="i">
-        <td>{{ row.id }}</td>
-        <td>{{ row.title }}</td>
-        <td>{{ row.isbn }}</td>
-        <td>{{ row.category.description }}</td>
-        <td>{{ row.publisher.name }}</td>
-        <td>{{ row.quantity }}</td>
-        <td>{{ row.price }}</td>
+        <td style="width: 5%" id="item-center">{{ row.id }}</td>
+        <td style="width: 30%">{{ row.title }}</td>
+        <td style="width: 10%" id="item-center">{{ row.isbn }}</td>
+        <td style="width: 25%" id="item-center">{{ row.category.description }}</td>
+        <td style="width: 20%">{{ row.publisher.name }}</td>
+        <td id="item-center">{{ row.quantity }}</td>
+        <td id="item-center">{{ row.price }}</td>
         <td class="column-add-edit">
           <router-link
             :to="{

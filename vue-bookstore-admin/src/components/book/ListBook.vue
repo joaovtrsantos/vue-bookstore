@@ -12,10 +12,10 @@ export default {
         { label: "ISBN", field: "isbn" },
         { label: "Categoria", field: "categoryId" },
         { label: "Editora", field: "publisherId" },
-        { label: "Quantidade", field: "quantity" },
+        { label: "Qtd", field: "quantity" },
         { label: "Preço", field: "price" },
       ],
-      tableSize: "80%",
+      tableSize: "90%",
     };
   },
   computed: {
