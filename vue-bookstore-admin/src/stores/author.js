@@ -28,6 +28,8 @@ export const useAuthorStore = defineStore({
                     "http://localhost:4000/authors",
                     author
                 );
+                setTimeout(() => {
+                },15);
                 this.authors.push(data);
                 
                 return Promise.resolve("Author added");
@@ -42,6 +44,8 @@ export const useAuthorStore = defineStore({
                     `http://localhost:4000/authors/${author.id}`,
                     author
                 );
+                setTimeout(() => {
+                },15);
                 const index = this.authors.findIndex((a) => a.id === author.id);
                 this.authors.splice(index, 1, { ...author });
                 return Promise.resolve("Author changed");

@@ -6,13 +6,8 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "home",
-      component: HomeView,
-    },
-    {
-      path: "/about",
-      name: "about",
-      component: () => import("../views/AboutView.vue"),
+      name: "book",
+      component: () => import("../views/BookView.vue"),
     },
     {
       path: "/category",
@@ -28,11 +23,6 @@ const router = createRouter({
       path: "/author",
       name: "author",
       component: () => import("../views/AuthorView.vue"),
-    },
-    {
-      path: "/book",
-      name: "book",
-      component: () => import("../views/BookView.vue"),
     },
     {
       path: "/cadBook",
