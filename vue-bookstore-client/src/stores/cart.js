@@ -44,6 +44,7 @@ export const useCartStore = defineStore({
 
           const { data } = await axios.post("http://localhost:4000/carts", itemCart);
           this.carts.push(data);
+          this.getAllCarts();
           alert('Item adicionado ao carrinho.');
           return Promise.resolve("Livro adicionada com sucesso!");
         } catch (e) {
@@ -57,6 +58,7 @@ export const useCartStore = defineStore({
         await axios.delete(`http://localhost:4000/carts/${cart_id}`);
         const index = this.carts.findIndex((cart) => cart.id === cart_id);
         this.carts.splice(index);
+        this.getAllCarts();
         return Promise.resolve();
       } catch (e) {
         return Promise.reject("Erro ao excluir");
