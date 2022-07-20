@@ -48,9 +48,11 @@ export const useBookStore = defineStore({
     },
     async saveBook(book) {
       if (book.id) {
-        return await this.updateBook(book);
+        await this.updateBook(book);
+        return this.getAllBooks();
       } else {
-        return await this.addBook(book);
+        await this.addBook(book);
+        return this.getAllBooks();
       }
     },
     async deleteBook(book_id) {
