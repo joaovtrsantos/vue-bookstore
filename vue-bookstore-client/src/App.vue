@@ -5,7 +5,7 @@ import { RouterLink, RouterView } from "vue-router";
 <template>
   <header>
     <nav class="nav">
-      <RouterLink to="/book">Livros</RouterLink>
+      <RouterLink to="/">Livros</RouterLink>
       <input
         type="search"
         class="input-search"
