@@ -25,7 +25,6 @@ export default {
     async deleteItem(cart) {
       try {
         await this.deleteItemCart(cart.id);
-        alert("Item excluído com sucesso.");
       } catch (e) {
         alert(e);
       }
@@ -43,8 +42,9 @@ export default {
         carts.forEach(cart => {
           this.editBookQuantity(cart.book, cart.quantity);
           this.deleteItem(cart);
-          this.bought = true;
         });
+        this.bought = true;
+        alert("Compra finalizada!");
       }   
     },
     calcTotalCart(carts, totalCart) {
@@ -71,8 +71,8 @@ export default {
 };
 </script>
 <template>
-  <div v-if="bought === true">compra finalizada</div>
-  <div v-else-if="!carts[0]">carrinho vazio</div>
+  <div v-if="bought === true" class="title">compra finalizada</div>
+  <div v-else-if="!carts[0]" class="title">carrinho vazio</div>
   <div v-else class="div-page-cart">
     <div class="cart-item-block">
       <div v-for="(row, i) of carts" :key="i" class="items-cart">
