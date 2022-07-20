@@ -29,7 +29,7 @@ export default {
           this.book.quantity != "" && this.book.price != ""
           ) {
             const msg = await this.saveBook(this.book);
-            alert(msg);
+            alert("Ação concluída!");
           } 
           else
             alert("informe todos os campos!");
@@ -92,6 +92,7 @@ export default {
             <div class="field-wrap">
               <input
                 type="number"
+                step=".01"
                 placeholder="Quantidade *"
                 v-model="book.quantity"
                 required
