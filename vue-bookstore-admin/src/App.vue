@@ -19,7 +19,7 @@ import { RouterLink, RouterView } from "vue-router";
   </header>
   <RouterView />
   <footer>
-    <p id="test">JB Produções©</p>
+    <p>JB Produções©</p>
   </footer>
 </template>
 
@@ -60,11 +60,12 @@ footer {
   bottom: 0;
 }
 
-#test {
+footer p {
   padding-top: 1em;
   font-size: medium;
   text-align: center;
 }
+
 nav {
   margin-left: 3%;
 }
